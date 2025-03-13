@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://choe3w5ecqqfq"]
+
+[ext_resource type="Shader" path="res://Shaders/Phong Lighting.gdshader" id="1_w4r0p"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_w4r0p")
+shader_parameter/MAX_STEPS = 100
+shader_parameter/MAX_DIST = 100.0
+shader_parameter/Collision_thres = 0.01
+shader_parameter/Blend = 1.0
+shader_parameter/sphere_r = 1.0
+shader_parameter/sphere_pos = Vector3(0, 0, 0)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://s6eg6h8dl7nl"]
+
+[ext_resource type="Material" uid="uid://choe3w5ecqqfq" path="res://Shaders/Phong Lighting.tres" id="1_g55fh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dnec1"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.105, 0, 0, 0, 9.105, 0, 0, 0, 9.105, 0.0332579, 1.24195, 0)
+material_override = ExtResource("1_g55fh")
+mesh = SubResource("BoxMesh_dnec1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.75721)
