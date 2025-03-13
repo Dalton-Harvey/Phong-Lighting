@@ -9,5 +9,6 @@ shader_parameter/MAX_STEPS = 100
 shader_parameter/MAX_DIST = 100.0
 shader_parameter/Collision_thres = 0.01
 shader_parameter/Blend = 1.0
+shader_parameter/lightDir = Vector3(1, 0.5, 0)
 shader_parameter/sphere_r = 1.0
 shader_parameter/sphere_pos = Vector3(0, 0, 0)

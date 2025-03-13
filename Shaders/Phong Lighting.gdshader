@@ -6,6 +6,7 @@ uniform int MAX_STEPS = 100;
 uniform float MAX_DIST = 100.0;
 uniform float Collision_thres = 0.01;
 uniform float Blend = 1.0;
+uniform vec3 lightDir = vec3(1.0,0.5,0.0);
 
 //sphere parameters
 uniform float sphere_r = 1.0;
@@ -53,33 +54,35 @@ vec3 estimateNormal(vec3 p) {
 vec3 Phong(vec3 pos,vec3 cameraSource)
 {
 	//lighting = ambient + diffuse + specular
+	vec3 normal = normalize(pos);
+	
 	vec3 lighting = vec3(0.0);
+	vec3 lightColor = vec3(0.75);// the color the light is emitting
+	vec3 lightSource = normalize(lightDir); //this is the direction the light is coming from
 	
 	//calculate the ambient lighting
 	//lighting = ambient
-	vec3 ambient = vec3(0.5);
+	float ambientstrength = 0.05;
+	vec3 ambient = ambientstrength * lightColor;
 	
 	//calcuate the diffuse light
 	//lighting = ambient + diffuse
-	vec3 normal = normalize(pos);
-	vec3 lightColor = vec3(1.0); // the color the light is emitting
-	vec3 lightSource = normalize(vec3(1.0,0.5,0.0)); //this is the direction the light is coming from
-	float diffuseStrength = max(0.0, dot(lightSource, normal));
+	float diffuseStrength = max(0.0, dot(lightSource, normal));//cos theta
 	vec3 diffuse = diffuseStrength * lightColor;
 	
 	
 	//calculate the specular light
 	//lighting = ambient + diffuse + specular
 	//specular = SpecCoeffient(dot(reflectionVec,viewVector))Shinyness
-	vec3 viewSource = normalize(cameraSource);
 	vec3 reflectSource = normalize(reflect(-lightSource, normal));
+	vec3 viewSource = normalize(cameraSource);
 	float specularStrength = max(0.0,dot(viewSource, reflectSource));
 	specularStrength = pow(specularStrength, 32.0);
 	vec3 specular = specularStrength * lightColor;
 	
 	
 	//final outcome
-	lighting = ambient * 0.03 + diffuse * 0.5 + specular*1.0;
+	lighting = ambient + diffuse  + specular*0.5;
 	
 	//color = modelColor * lighting
 	vec3 modelColor = vec3(0.5,0.0,0.0);
