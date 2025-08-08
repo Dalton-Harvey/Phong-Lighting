@@ -75,8 +75,8 @@ vec3 color = modelColor * lighting;
 
 # References:
 ---
-[Unity Ambient light](https://docs.unity3d.com/Manual/lighting-ambient-light.html)
-[Phong Lighting Wiki](https://en.wikipedia.org/wiki/Phong_reflection_model)
-[Univ of Texas Paper](https://www.cs.utexas.edu/~bajaj/graphics2012/cs354/lectures/lect14.pdf)
-[OpenGL Phong documentation](https://learnopengl.com/Lighting/Basic-Lighting)
-[Introduction to Phong Lighting Video](https://www.youtube.com/watch?v=LKXAIuCaKAQ)
+[Unity Ambient light](https://docs.unity3d.com/Manual/lighting-ambient-light.html)<br>
+[Phong Lighting Wiki](https://en.wikipedia.org/wiki/Phong_reflection_model)<br>
+[Univ of Texas Paper](https://www.cs.utexas.edu/~bajaj/graphics2012/cs354/lectures/lect14.pdf)<br>
+[OpenGL Phong documentation](https://learnopengl.com/Lighting/Basic-Lighting)<br>
+[Introduction to Phong Lighting Video](https://www.youtube.com/watch?v=LKXAIuCaKAQ)<br>
